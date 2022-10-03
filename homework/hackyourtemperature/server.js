@@ -1,5 +1,5 @@
 import express from 'express';
-const app = express(); // express function creates new application
+const app = express(); // express function creates a new application
 
 app.use(express.json()); // is responsible for parsing the request body
 
