@@ -57,6 +57,10 @@ app.<METHOD>('/blogs', (req, res) => {
 
 Hint: Remember `express.json()`. Why did we use it during our lectures?
 
+*** 
+we used express.json() in order to parse the request and get the data.
+***
+
 After you've finished writing your code, use Postman to test that your code works. Send a request using the correct HTTP verb and URL. As the data you'll be sending in the request body, you can make use of the example: `{ "title": "My first blog", "content": "Lorem ipsum" }`. Make sure that you specify the`Content-Type` as JSON!
 
 Expected output:

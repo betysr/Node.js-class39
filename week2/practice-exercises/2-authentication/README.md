@@ -19,6 +19,7 @@ Follow the steps:
 ```md
 admin:hvgX8KlVEa
 ```
+YWRtaW46aHZnWDhLbFZFYQ==
 
 2. Set the Authorization header and API URL in the GET request (use `node-fetch`)
 

@@ -6,9 +6,11 @@ Start by taking a look at the documentation of the API: https://reservation100-s
 While reading the documentation make sure to note the following:
 
 - Which methods are available (GET or POST)?
-- What is the route?
-- What headers are expected?
-- What should the request body contain, and how it should be formatted?
+ -> POST method is available
+- What is the route? -> /reservations
+- What headers are expected? ->  Content-Type: application\json
+- What should the request body contain, and how it should be formatted? 
+-> it contains name and numberOfPeople. It should be json format.
 
 After you understand the API, write a function that makes a reservation and logs the response to the console. Follow the steps:
 
