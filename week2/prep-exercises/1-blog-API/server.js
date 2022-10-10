@@ -2,7 +2,8 @@ const express = require('express')
 const fs = require("fs");
 const app = express();
 
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true})); // parse incoming Request Object if object, with nested objects, or generally any type.
+app.use(express.json()); // parses incoming JSON requests and puts the parsed data in req.body
 
 // YOUR CODE GOES IN HERE
 app.get('/', function (req, res) {
@@ -26,7 +27,7 @@ app.post('/blogs', function (req,res) {
   const title = req.body.title;
   const content = req.body.content;
   fs.writeFileSync(title, content);
-  res.setHeader("Content-type", "application/json");
+  res.setHeader("Content-type", "text/plain");
   console.log(req.body);
   res.end('ok');
 })
@@ -35,15 +36,14 @@ app.put('/posts/:title', (req, res) => {
   // How to get the title and content from the request?
     // -> const {title} = req.params;  we can use destructing 
   // What if the request does not have a title and/or content?
-  // -> It if statement does not work and it continues to else part.
+  // -> if statement does not work and then it continues to else part.
 
-  // It does not work i could not get tha req body data. It writes NaN value to the file. 
-  const {title} = req.params;
-  const { content } = req.body;
-  console.log("content",content);
+  const {title} = req.params; 
+  const {content} = req.body; 
+  console.log(content);
 
   if (fs.existsSync(title)) {
-    fs.writeFileSync(title, parseInt(content, 10).toString());
+    fs.writeFileSync(title, content);
     res.end('ok')
   }
   else {
