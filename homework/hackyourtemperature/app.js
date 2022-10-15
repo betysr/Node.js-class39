@@ -37,7 +37,9 @@ app.post("/weather", async (req,res) => {
     }
   } 
   catch(err) {
-    res.status(500);
+    res.status(500).json({ 
+      weatherText: `Something went wrong with server!`
+    });;
   }
 });
 
