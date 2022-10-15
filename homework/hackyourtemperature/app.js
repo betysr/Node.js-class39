@@ -26,7 +26,6 @@ app.post("/weather", async (req,res) => {
     if(response.ok){
       const data = await response.json();
       const degree = `${Math.floor(data.main.temp)}`;
-      res.setHeader("Content-Type", "application/json")
       res.status(200).json({
         weatherText: `${data.name} is ${degree}°C`,
       });
@@ -38,7 +37,7 @@ app.post("/weather", async (req,res) => {
     }
   } 
   catch(err) {
-    console.log(err);
+    res.status(500);
   }
 });
 

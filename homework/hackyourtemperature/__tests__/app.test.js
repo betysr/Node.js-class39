@@ -9,7 +9,6 @@ describe("POST /", () => {
       .get("/")
       .then(response => {
         expect(response.statusCode).toBe(200);
-        
       });
   });
 });
